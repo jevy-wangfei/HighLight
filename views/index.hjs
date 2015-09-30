@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hight Light</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/layout.css" rel="stylesheet">
+    <!-- <meta http-equiv="refresh" content="3" /> -->
+  </head>
+  <body>
+    <!--Left Page Names menu-->
+  <div class="list-group" id="article_name">
+    <a href="#" class="list-group-item active">
+      New a page
+    </a>
+    <a href="#" class="list-group-item info">
+      Cras justo odio
+    </a>
+    <a href="#" class="list-group-item info">Dapibus ac facilisis in</a>
+    <a href="#" class="list-group-item choose_article">Morbi leo risus</a>
+    <a href="#" class="list-group-item info">Porta ac consectetur ac</a>
+    <a href="#" class="list-group-item info">Vestibulum at eros</a>
+  </div>
+
+  <div class="navbar navbar-default navbar-static-top navbar-fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Hight Light Pages <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Manage Section</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Setting <span class="caret"><span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="container-fluid">
+      <ul class="nav nav-tabs nav-justified">
+    			<!-- <li role="presentation" id="section1" class="active"><a href="#" onclick="active_tab('#restaurant')">Restaurants Near you</a></li>
+    			<li role="presentation" id="section3" calss=""><a href="#"onclick="active_tab('#together')">Delivery Together</a></li>
+          <li role="presentation" id="section3" calss=""><a href="#"onclick="active_tab('#together')">Delivery Together</a></li>
+          <li role="presentation" id="section3" calss=""><a href="#"onclick="active_tab('#together')">Delivery Together</a></li> -->
+    	</ul>
+    </div>
+
+    <div class="container-fluid">
+      <div class="col-xs-12" id="articles">
+        <div id="content">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="javascripts/jquery.min.js"></script>
+	<script src="javascripts/bootstrap.min.js"></script>
+  <script src="javascripts/util.js"></script>
+  <script src="javascripts/content.js"></script>
+  <script type="text/javascript">
+    $(window).load(function(){
+      restGet(ip+"/notebook", "GET",function(data){
+        $.each(data,function(i, book){
+          notebook(book, i);
+        });
+      }, '') ;
+
+    });
+
+
+    function active_tab(e){
+      $(e).siblings().removeClass();
+      $(e).addClass('active');
+    }
+
+
+
+  </script>
+  </body>
+</html>
